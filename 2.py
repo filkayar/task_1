@@ -17,7 +17,6 @@ def func(x):
 xn = float(input("Введите значение xn: "))
 xk = float(input("Введите значение xk: "))
 h = float(input("Введите значение h: "))
-
 # Генерация списка значений аргумента x
 x_values = []
 current_x = xn
@@ -27,17 +26,14 @@ while current_x <= xk:
 
 # Расчет списка значений функции t
 t_values = [func(x) for x in x_values]
-
 # Печать таблицы значений функции t
 table = pd.DataFrame({'x': x_values, 't': t_values})
 print(table)
 
 # Конвертация списка в словарь
 data_dict = {'x': x_values, 't': t_values}
-
 # Конвертация списка в датафрейм
 df = pd.DataFrame(data_dict)
-
 # Построение графика функции t=f(x)
 plt.plot(df['x'], df['t'])
 plt.xlabel('x')

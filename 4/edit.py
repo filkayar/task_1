@@ -1,20 +1,16 @@
 def get_perimeter_elements(matrix):
     perimeter_elements = []
-
     # Получение размеров матрицы
     rows = len(matrix)
     if rows == 0:
         return perimeter_elements
     columns = len(matrix[0])
-
     # Запись верхней строки
     for i in range(columns):
         perimeter_elements.append(matrix[0][i])
-
     # Запись правого столбца
     for i in range(1, rows):
         perimeter_elements.append(matrix[i][columns - 1])
-
     # Запись нижней строки (если есть)
     if rows > 1:
         for i in range(columns - 2, -1, -1):
